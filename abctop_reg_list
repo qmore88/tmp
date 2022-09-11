@@ -1,0 +1,209 @@
+abctop_reg_list = [
+{
+  "addr" : 0x0000,
+  "name" : "afe_mode",
+  "type" : "RW",
+  "bit"  :
+  [
+    ["afe_en", [0], 0x0],
+    ["reload_cfg_en", [2], 0x0],
+    ["reload_cb_en", [3], 0x1],
+    ["sx_short_mode", [4], 0x0],
+    ["ca_phase_single", [6], 0x0],
+    ["lcd_pump_clk_sel", [16], 0x0],
+  ]
+},
+{
+  "name" : "auto_k_cb_ctrl1",
+  "type" : "RW",
+  "bit"  :
+  [
+    ["cb_thd",     [23,0], 0x0],
+    ["cb_adj_dir", [28], 0x0],
+    ["auto_k_cb_en", [31], 0x0],
+  ]
+},
+{
+  "name" : "auto_k_cb_ctrl2",
+  "type" : "RW",
+  "bit"  :
+  [
+    ["cb_init_value",     [5,0], 0x20],
+    ["cb_init_en", [8], 0x0],
+  ]
+},
+{
+  "name" : "dma_globle_ctrl1",
+  "type" : "RW",
+  "bit"  :
+  [
+    ["map_r_start_addr", [9,0],0x324],
+  ]
+},
+{
+  "name" : "afe_top_status1",
+  "type" : "RO",
+  "bit"  :
+  [
+    ["cfg_reload_busy", [0]],
+    ["tab_reload_busy", [1],0x0],
+  ]
+},
+{
+  "name" : "cfg_reload_ctrl1",
+  "type" : "RW",
+  "bit"  :
+  [
+    ["cfg_reload_num", [5,0], 0x10],
+  ]
+},
+{
+  "name" : "cb_reload_cfg1",
+  "type" : "RW",
+  "bit"  :
+  [
+    ["cb_shift_clk_width", [3,0], 0x00],
+  ]
+},
+{
+  "name" : "allgateon_l",
+  "type" : "RW",
+  "bit"  :
+  [
+    ["allgateon_l", [23,0], 0x0],
+  ]
+},
+{
+  "name" : "allgateon_r",
+  "type" : "RW",
+  "bit"  :
+  [
+    ["allgateon_r", [23,0], 0x0],
+  ]
+},
+{
+  "name" : "non_allgateon_l",
+  "type" : "RW",
+  "bit"  :
+  [
+    ["non_allgateon_l", [23,0], 0x0],
+  ]
+},
+{
+  "name" : "non_allgateon_r",
+  "type" : "RW",
+  "bit"  :
+  [
+    ["non_allgateon_r", [23,0], 0x0],
+  ]
+},
+{
+  "name" : "afd_cfg1",
+  "type" : "RW",
+  "bit"  :
+  [
+    ["sx_start_dly", [5,0], 0x1],
+    ["sd_start_dly", [13,8], 0x1],
+    ["vmod_start_dly", [21,16], 0x2],
+    ["vcom_start_dly", [29,24], 0x1],
+  ]
+},
+{
+  "name" : "afd_cfg2",
+  "type" : "RW",
+  "bit"  :
+  [
+    ["afd_cfg2", [0], 0x0],
+  ]
+},
+{
+  "name" : "afd_cfg3",
+  "type" : "RW",
+  "bit"  :
+  [
+    ["af_p1r", [11,0], 0x0],
+    ["af_p1w", [27,16], 0xC],
+  ]
+},
+{
+  "name" : "afd_cfg4",
+  "type" : "RW",
+  "bit"  :
+  [
+    ["af_p2r", [11,0], 0x0],
+    ["af_p2w", [27,16], 0x48],
+  ]
+},
+{
+  "name" : "mon_cfg1",
+  "type" : "RW",
+  "bit"  :
+  [
+    ["mon_sx_drv",   [5,0], 0x0],
+    ["mon_sd_drv",   [13,8], 0x0],
+    ["mon_vmod_drv", [21,16], 0x0],
+    ["mon_vcom_drv", [29,24], 0x0],
+  ]
+},
+{
+  "name" : "mon_cfg2",
+  "type" : "RW",
+  "bit"  :
+  [
+    ["mon_cfg2",   [0], 0x0],
+  ]
+},
+{
+  "name" : "ana_ctrl1",
+  "type" : "RW",
+  "bit"  :
+  [
+    ["ana_ctrl1", [31,0], 0x04552700],
+  ]
+},
+{
+  "name" : "ana_ctrl2",
+  "type" : "RW",
+  "bit"  :
+  [
+    ["ana_ctrl2", [31,0], 0xA5300000],
+  ]
+},
+{
+  "name" : "sram_test_mode",
+  "type" : "RW",
+  "bit"  :
+  [
+    ["afe_cfgram_bist_en", [0], 0x0],
+    ["afe_l_accram_bist_en", [1], 0x0],
+    ["afe_l_cbram_bist_en", [2], 0x0],
+    ["afe_r_accram_bist_en", [3], 0x0],
+    ["afe_r_cbram_bist_en", [4], 0x0],
+  ]
+},
+{
+  "name" : "sram_test_status",
+  "type" : "RO",
+  "bit"  :
+  [
+    ["afe_cfgram_bist_done", [0], 0x0],
+    ["afe_l_accram_bist_done", [1], 0x0],
+    ["afe_l_cbram_bist_done", [2], 0x0],
+    ["afe_r_accram_bist_done", [3], 0x0],
+    ["afe_r_cbram_bist_done", [4], 0x0],
+    ["afe_cfgram_bist_err", [16], 0x0],
+    ["afe_l_accram_bist_err", [17], 0x0],
+    ["afe_l_cbram_bist_err", [18], 0x0],
+    ["afe_r_accram_bist_err", [19], 0x0],
+    ["afe_r_cbram_bist_err", [20], 0x0],
+  ]
+},
+{
+  "name" : "afe_test_mode",
+  "type" : "RW",
+  "bit"  :
+  [
+    ["afe_test_mode", [31,0], 0x0],
+  ]
+},
+]
